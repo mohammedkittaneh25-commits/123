@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>YAAAY!</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Question</title>
 
   <style>
     body {
@@ -17,21 +17,40 @@
       overflow: hidden;
     }
 
-    .container {
+    .page {
+      display: none;
       text-align: center;
     }
 
+    .active {
+      display: block;
+    }
+
     h1 {
-      font-size: 48px;
-      margin-bottom: 10px;
+      font-size: 36px;
+      margin-bottom: 20px;
     }
 
-    img {
-      width: 250px;
-      max-width: 80%;
+    button {
+      padding: 12px 24px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
     }
 
-    /* Sun background */
+    #yesBtn {
+      background: #ff6fa5;
+      color: white;
+      margin-right: 20px;
+    }
+
+    #noBtn {
+      position: absolute;
+      background: #ccc;
+    }
+
+    /* Yes page */
     .sun-bg {
       position: fixed;
       right: 40px;
@@ -49,7 +68,6 @@
       100% { transform: translateY(-50%) translateY(0); }
     }
 
-    /* Sun note */
     .sun-note {
       margin-top: 12px;
       font-size: 13px;
@@ -60,19 +78,41 @@
 </head>
 <body>
 
-  <!-- Floating sun -->
-  <div class="sun-bg">☀️</div>
+  <!-- Question Page -->
+  <div id="questionPage" class="page active">
+    <h1>Will u go out with me? 💕</h1>
+    <button id="yesBtn" onclick="showYesPage()">Yes 💖</button>
+    <button id="noBtn">No 🙈</button>
+  </div>
 
-  <!-- Main content -->
-  <div class="container">
+  <!-- Yes Page -->
+  <div id="yesPage" class="page">
+    <div class="sun-bg">☀️</div>
     <h1>YAAAY!!! 🎉🥳</h1>
-    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbWJ6b2VhZ2N1c2Z0b2I0dGZ1cGg3NnE1NnJmNnM4dWx6bXh0ZCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/26ufdipQqU2lhNA4g/giphy.gif" alt="celebration">
-
+    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbWJ6b2VhZ2N1c2Z0b2I0dGZ1cGg3NnE1NnJmNnM4dWx6bXh0ZCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/26ufdipQqU2lhNA4g/giphy.gif" width="250">
     <p class="sun-note">
       This page is powered by the sun<br>
       Freckles may increase ☀️😌
     </p>
   </div>
+
+  <script>
+    const noBtn = document.getElementById("noBtn");
+
+    noBtn.addEventListener("mouseover", moveNo);
+
+    function moveNo() {
+      const x = Math.random() * (window.innerWidth - 100);
+      const y = Math.random() * (window.innerHeight - 50);
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    }
+
+    function showYesPage() {
+      document.getElementById("questionPage").classList.remove("active");
+      document.getElementById("yesPage").classList.add("active");
+    }
+  </script>
 
 </body>
 </html>
