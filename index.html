@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>YAAAY!</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #ffe6f0;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    img {
+      width: 250px;
+      max-width: 80%;
+    }
+
+    /* Sun background */
+    .sun-bg {
+      position: fixed;
+      right: 40px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 60px;
+      opacity: 0.15;
+      pointer-events: none;
+      animation: floatSun 6s ease-in-out infinite;
+    }
+
+    @keyframes floatSun {
+      0% { transform: translateY(-50%) translateY(0); }
+      50% { transform: translateY(-50%) translateY(-15px); }
+      100% { transform: translateY(-50%) translateY(0); }
+    }
+
+    /* Sun note */
+    .sun-note {
+      margin-top: 12px;
+      font-size: 13px;
+      color: #555;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating sun -->
+  <div class="sun-bg">☀️</div>
+
+  <!-- Main content -->
+  <div class="container">
+    <h1>YAAAY!!! 🎉🥳</h1>
+    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbWJ6b2VhZ2N1c2Z0b2I0dGZ1cGg3NnE1NnJmNnM4dWx6bXh0ZCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/26ufdipQqU2lhNA4g/giphy.gif" alt="celebration">
+
+    <p class="sun-note">
+      This page is powered by the sun<br>
+      Freckles may increase ☀️😌
+    </p>
+  </div>
+
+</body>
+</html>
